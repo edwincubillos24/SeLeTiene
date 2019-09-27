@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "150385578533",
+    "firebase_url": "https://seletiene-406dd.firebaseio.com",
+    "project_id": "seletiene-406dd",
+    "storage_bucket": "seletiene-406dd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:150385578533:android:54609ef7fbfb85b2daa5cc",
+        "android_client_info": {
+          "package_name": "com.edwinacubillos.seletiene"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "150385578533-4r1avovrddsr8cug3ff7a75mi3raspsp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.edwinacubillos.seletiene",
+            "certificate_hash": "c2561be34123b665adb9e1288f9439bd5748cee1"
+          }
+        },
+        {
+          "client_id": "150385578533-5tp6vm9rirfq9cctj1923880jfa25qmk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoCD28Gb_Jit81iwlSU8-BOyoh4_DK254"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "150385578533-5tp6vm9rirfq9cctj1923880jfa25qmk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
