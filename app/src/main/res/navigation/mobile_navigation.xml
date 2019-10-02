@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_productos">
+
+    <fragment
+        android:id="@+id/nav_productos"
+        android:name="com.edwinacubillos.seletiene.ui.producto.ProductosFragment"
+        android:label="@string/menu_productos"
+        tools:layout="@layout/fragment_productos" />
+
+    <fragment
+        android:id="@+id/nav_ubicacion"
+        android:name="com.edwinacubillos.seletiene.ui.ubicacion.UbicacionFragment"
+        android:label="@string/menu_ubicacion"
+        tools:layout="@layout/fragment_ubicacion" />
+
+    <fragment
+        android:id="@+id/nav_perfil"
+        android:name="com.edwinacubillos.seletiene.ui.perfil.PerfilFragment"
+        android:label="@string/menu_perfil"
+        tools:layout="@layout/fragment_perfil" />
+
+</navigation>

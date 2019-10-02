@@ -30,6 +30,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun bIniciar_sesionClicked(view: View) {
+
         var email = etEmail.text.toString()
         var password = etContrasena.text.toString()
 
