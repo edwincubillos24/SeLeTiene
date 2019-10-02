@@ -4,4 +4,6 @@
     <string name="contrasena">Contraseña (Min 6 caracteres)</string>
     <string name="iniciar_sesion">Iniciar Sesión</string>
     <string name="registrar">No tienes cuenta <u>Registrate</u></string>
+    <string name="repcontrasena">Repita contraseña</string>
+    <string name="registrarse">Registrar</string>
 </resources>
