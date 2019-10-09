@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.edwinacubillos.seletiene.model.Usuario
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_registro.*
@@ -57,12 +58,14 @@ class RegistroActivity : AppCompatActivity() {
 
         val currentUser = auth.currentUser
 
-        val usuario: Usuario = Usuario(
-            currentUser!!.uid,
-            currentUser.email,
-            "",
-            ""
-        )
+        val usuario: Usuario =
+            Usuario(
+                currentUser!!.uid,
+                currentUser.email,
+                "",
+                "",
+                ""
+            )
 
         myRefUser.child(currentUser!!.uid).setValue(usuario)
 
