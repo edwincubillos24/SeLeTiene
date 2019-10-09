@@ -4,6 +4,8 @@ import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
+import android.location.Address
+import android.location.Geocoder
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
@@ -22,6 +24,7 @@ import com.google.firebase.storage.UploadTask
 import kotlinx.android.synthetic.main.activity_producto_nuevo.*
 import kotlinx.android.synthetic.main.content_producto_nuevo.*
 import java.io.ByteArrayOutputStream
+import java.io.IOException
 
 class ProductoNuevoActivity : AppCompatActivity() {
 
@@ -29,6 +32,8 @@ class ProductoNuevoActivity : AppCompatActivity() {
     private lateinit var database: FirebaseDatabase
     private var currentUser: FirebaseUser? = null
     private var idProducto: String? = null
+    private var latitud: String = ""
+    private var longitud: String = ""
 
     private lateinit var myRefProducto: DatabaseReference
 
@@ -57,7 +62,10 @@ class ProductoNuevoActivity : AppCompatActivity() {
 
     private fun guardarFoto() {
         val storage = FirebaseStorage.getInstance()
-        val myRefFoto = storage.reference.child("productos")
+        val myRefFoto = storage.reference
+            .child("productos")
+            .child(currentUser!!.uid)
+            .child(idProducto!!)
 
         val bitmap = (iv_producto.drawable as BitmapDrawable).bitmap
         val baos = ByteArrayOutputStream()
@@ -65,8 +73,6 @@ class ProductoNuevoActivity : AppCompatActivity() {
         val data = baos.toByteArray()
 
         var uploadTask = myRefFoto
-            .child(currentUser!!.uid)
-            .child(idProducto!!)
             .putBytes(data)
 
         val urlTask = uploadTask.continueWithTask(Continuation<UploadTask.TaskSnapshot, Task<Uri>> { task ->
@@ -89,9 +95,22 @@ class ProductoNuevoActivity : AppCompatActivity() {
     }
 
     private fun guardarProducto(downloadUrl: String) {
-        val coordenadas = et_ubicacion.text.toString().split(" ")
-        val latitud = coordenadas[0]
-        val longitud = coordenadas[1]
+        var geocoder = Geocoder(this)
+        var ubicacion = et_ubicacion.text.toString()
+
+        lateinit var list: MutableList<Address>
+
+        try{
+            list = geocoder.getFromLocationName(ubicacion,1)
+        }catch (e: IOException){
+
+        }
+
+        if (list.size>0){
+            var address: Address = list.get(0)
+            latitud = address.latitude.toString()
+            longitud = address.longitude.toString()
+        }
 
         val producto = Producto(
             idProducto,
@@ -104,7 +123,7 @@ class ProductoNuevoActivity : AppCompatActivity() {
             longitud,
             latitud,
             et_cantidad.text.toString().toInt(),
-            "")
+            ubicacion)
 
         myRefProducto.child(idProducto!!).setValue(producto)
         onBackPressed()

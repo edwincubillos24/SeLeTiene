@@ -22,6 +22,7 @@ class DetalleProductoActivity : AppCompatActivity() {
         tv_descripcion.text = producto.descripcion
         tv_cantidad.text = producto.cantidad.toString()
         tv_precio.text = producto.precio.toString()
+        tv_ubicacion.text = producto.ubicacion
         if (producto.urlFoto != "")
             Picasso.get().load(producto.urlFoto).into(iv_foto)
 
