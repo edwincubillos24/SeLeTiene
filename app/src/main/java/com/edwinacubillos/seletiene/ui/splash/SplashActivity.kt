@@ -1,10 +1,12 @@
-package com.edwinacubillos.seletiene
+package com.edwinacubillos.seletiene.ui.splash
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.edwinacubillos.seletiene.LoginActivity
+import com.edwinacubillos.seletiene.R
 import java.util.*
 import kotlin.concurrent.timerTask
 

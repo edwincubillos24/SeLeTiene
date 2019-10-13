@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/nav_ubicacion"
-        android:name="com.edwinacubillos.seletiene.UbicacionFragment"
+        android:name="com.edwinacubillos.seletiene.ui.ubicacion.UbicacionFragment"
         android:label="@string/menu_ubicacion"
         tools:layout="@layout/fragment_ubicacion" />
 
@@ -22,5 +22,11 @@
         android:name="com.edwinacubillos.seletiene.ui.perfil.PerfilFragment"
         android:label="@string/menu_perfil"
         tools:layout="@layout/fragment_perfil" />
+
+    <fragment
+        android:id="@+id/nav_favorits"
+        android:name="com.edwinacubillos.seletiene.ui.favoritos.FavoritosFragment"
+        android:label="@string/menu_favoritos"
+        tools:layout="@layout/fragment_favoritos" />
 
 </navigation>

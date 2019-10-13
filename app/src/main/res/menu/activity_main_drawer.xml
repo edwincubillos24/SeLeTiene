@@ -17,9 +17,9 @@
             android:icon="@drawable/ic_person_black_24dp"
             android:title="@string/menu_perfil" />
         <item
-            android:id="@+id/nav_cerrarSesion"
-            android:icon="@drawable/ic_exit_to_app_black_24dp"
-            android:title="@string/menu_cerrarsesion" />
+            android:id="@+id/nav_favorits"
+            android:icon="@drawable/ic_favorite_border_black_24dp"
+            android:title="@string/menu_favoritos" />
     </group>
 
 

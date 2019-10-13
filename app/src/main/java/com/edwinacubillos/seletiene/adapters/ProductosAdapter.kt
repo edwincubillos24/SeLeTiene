@@ -1,10 +1,12 @@
-package com.edwinacubillos.seletiene
+package com.edwinacubillos.seletiene.adapters
 
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.edwinacubillos.seletiene.DetalleProductoActivity
+import com.edwinacubillos.seletiene.R
 import com.edwinacubillos.seletiene.model.Producto
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.product_item.view.*

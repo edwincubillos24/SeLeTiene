@@ -1,4 +1,4 @@
-package com.edwinacubillos.seletiene
+package com.edwinacubillos.seletiene.ui.ubicacion
 
 import android.content.pm.PackageManager
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
+import com.edwinacubillos.seletiene.R
 import com.edwinacubillos.seletiene.model.Producto
 import com.google.android.gms.maps.*
 import com.google.android.gms.maps.model.LatLng

@@ -113,7 +113,7 @@ class ProductoNuevoActivity : AppCompatActivity() {
         }
 
         val producto = Producto(
-            idProducto,
+            idProducto!!,
             currentUser?.uid,
             et_nombre.text.toString(),
             et_descripcion.text.toString(),

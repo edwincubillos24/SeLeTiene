@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.edwinacubillos.seletiene.ProductoNuevoActivity
-import com.edwinacubillos.seletiene.ProductosAdapter
+import com.edwinacubillos.seletiene.adapters.ProductosAdapter
 import com.edwinacubillos.seletiene.R
 import com.edwinacubillos.seletiene.model.Producto
 import com.google.firebase.database.DataSnapshot
