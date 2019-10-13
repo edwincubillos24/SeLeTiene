@@ -1,4 +1,4 @@
-package com.edwinacubillos.seletiene
+package com.edwinacubillos.seletiene.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.edwinacubillos.seletiene.R
 import com.edwinacubillos.seletiene.model.Usuario
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
@@ -21,9 +22,9 @@ class RegistroActivity : AppCompatActivity() {
     }
 
     fun bRegistrar_sesionClicked(view: View) {
-        var email = etEmail.text.toString()
-        var password = etContrasena.text.toString()
-        var reppassword = etRepContrasena.text.toString()
+        val email = etEmail.text.toString()
+        val password = etContrasena.text.toString()
+        val reppassword = etRepContrasena.text.toString()
 
         if (!(password == reppassword)) {
             etContrasena.error = "Las contraseñas no coinciden"
@@ -39,7 +40,7 @@ class RegistroActivity : AppCompatActivity() {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    createUserDatabase(email)
+                    createUserDatabase()
                     goToMainActivity()
                 } else {
                     Log.w("Registro", "createUserWithEmail:failure", task.exception)
@@ -51,14 +52,14 @@ class RegistroActivity : AppCompatActivity() {
             }
     }
 
-    private fun createUserDatabase(email: String) {
+    private fun createUserDatabase() {
         // Write a message to the database
         val database = FirebaseDatabase.getInstance()
         val myRefUser = database.getReference("usuarios")
 
         val currentUser = auth.currentUser
 
-        val usuario: Usuario =
+        val usuario =
             Usuario(
                 currentUser!!.uid,
                 currentUser.email,
@@ -67,12 +68,12 @@ class RegistroActivity : AppCompatActivity() {
                 ""
             )
 
-        myRefUser.child(currentUser!!.uid).setValue(usuario)
+        myRefUser.child(currentUser.uid).setValue(usuario)
 
     }
 
     private fun goToMainActivity() {
-        var intent = Intent (this, MainActivity::class.java )
+        val intent = Intent (this, MainActivity::class.java )
         startActivity(intent)
     }
 }

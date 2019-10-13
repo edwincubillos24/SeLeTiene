@@ -10,8 +10,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.edwinacubillos.seletiene.ProductoNuevoActivity
-import com.edwinacubillos.seletiene.adapters.ProductosAdapter
+import com.edwinacubillos.seletiene.ui.ProductoNuevoActivity
+import com.edwinacubillos.seletiene.ui.adapters.ProductosAdapter
 import com.edwinacubillos.seletiene.R
 import com.edwinacubillos.seletiene.model.Producto
 import com.google.firebase.database.DataSnapshot
@@ -23,7 +23,6 @@ import kotlinx.android.synthetic.main.fragment_productos.view.*
 
 class ProductosFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
     private var productosList = ArrayList<Producto>()
     private lateinit var productosAdapter: ProductosAdapter
 
@@ -32,8 +31,6 @@ class ProductosFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-            ViewModelProviders.of(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_productos, container, false)
         // val textView: TextView = root.findViewById(R.id.text_home)
 
@@ -53,9 +50,6 @@ class ProductosFragment : Fragment() {
             goToNuevoProducto()
         }
 
-        homeViewModel.text.observe(this, Observer {
-            //     textView.text = it
-        })
         return root
     }
 

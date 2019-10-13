@@ -1,11 +1,11 @@
-package com.edwinacubillos.seletiene.adapters
+package com.edwinacubillos.seletiene.ui.adapters
 
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.edwinacubillos.seletiene.DetalleProductoActivity
+import com.edwinacubillos.seletiene.ui.DetalleProductoActivity
 import com.edwinacubillos.seletiene.R
 import com.edwinacubillos.seletiene.model.Producto
 import com.squareup.picasso.Picasso

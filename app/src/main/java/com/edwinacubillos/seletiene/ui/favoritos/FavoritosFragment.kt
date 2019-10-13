@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.edwinacubillos.seletiene.adapters.ProductosAdapter
+import com.edwinacubillos.seletiene.ui.adapters.ProductosAdapter
 import com.edwinacubillos.seletiene.R
 import com.edwinacubillos.seletiene.model.Producto
 import com.edwinacubillos.seletiene.model.local.Repository

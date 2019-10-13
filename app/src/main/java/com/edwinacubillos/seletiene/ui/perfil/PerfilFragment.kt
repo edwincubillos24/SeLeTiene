@@ -6,8 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
-import com.edwinacubillos.seletiene.LoginActivity
+import com.edwinacubillos.seletiene.ui.LoginActivity
 import com.edwinacubillos.seletiene.R
 import com.edwinacubillos.seletiene.model.Usuario
 import com.google.firebase.auth.FirebaseAuth
@@ -18,7 +17,7 @@ import kotlinx.android.synthetic.main.fragment_perfil.view.*
 
 class PerfilFragment : Fragment() {
 
-    private lateinit var slideshowViewModel: SlideshowViewModel
+
 
     private lateinit var auth: FirebaseAuth
     private lateinit var currentUser: FirebaseUser
@@ -32,8 +31,6 @@ class PerfilFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        slideshowViewModel =
-            ViewModelProviders.of(this).get(SlideshowViewModel::class.java)
         root = inflater.inflate(R.layout.fragment_perfil, container, false)
 
         auth = FirebaseAuth.getInstance()

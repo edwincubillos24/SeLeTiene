@@ -1,7 +1,8 @@
-package com.edwinacubillos.seletiene
+package com.edwinacubillos.seletiene.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.edwinacubillos.seletiene.R
 import com.edwinacubillos.seletiene.model.Producto
 import com.edwinacubillos.seletiene.model.local.Repository
 import com.squareup.picasso.Picasso

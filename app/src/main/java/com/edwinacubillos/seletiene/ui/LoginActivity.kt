@@ -1,4 +1,4 @@
-package com.edwinacubillos.seletiene
+package com.edwinacubillos.seletiene.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.edwinacubillos.seletiene.R
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -31,8 +32,8 @@ class LoginActivity : AppCompatActivity() {
 
     fun bIniciar_sesionClicked(view: View) {
 
-        var email = etEmail.text.toString()
-        var password = etContrasena.text.toString()
+        val email = etEmail.text.toString()
+        val password = etContrasena.text.toString()
 
         if (email.isEmpty() || password.isEmpty()){
             Toast.makeText(this,"Debe digitar todos los datos",Toast.LENGTH_SHORT).show()
@@ -63,7 +64,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun goToMainActivity() {
-        var intent = Intent (this, MainActivity::class.java )
+        val intent = Intent (this, MainActivity::class.java )
         startActivity(intent)
     }
 

@@ -1,4 +1,4 @@
-package com.edwinacubillos.seletiene
+package com.edwinacubillos.seletiene.ui
 
 import android.app.Activity
 import android.content.Intent
@@ -12,6 +12,7 @@ import android.provider.MediaStore
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.edwinacubillos.seletiene.R
 import com.edwinacubillos.seletiene.model.Producto
 import com.google.android.gms.tasks.Continuation
 import com.google.android.gms.tasks.Task
